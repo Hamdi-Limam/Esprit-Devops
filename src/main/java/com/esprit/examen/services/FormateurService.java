@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.esprit.examen.entities.Formateur;
-import com.esprit.examen.entities.TypeCours;
 import com.esprit.examen.repositories.FormateurRepository;
 
 @Service
@@ -31,12 +30,6 @@ public class FormateurService implements IFormateurService{
 		formateurRepository.deleteById(formateurId);
 		
 	}
-
-//	@Override
-//	public Long nombreFormateursImpliquesDansUnCours(TypeCours typeCours) {
-//		return formateurRepository.nombreFormateursImpliquesDansUnCours(typeCours);
-//		
-//	}
 
 
 

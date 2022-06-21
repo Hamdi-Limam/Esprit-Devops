@@ -15,7 +15,7 @@ import com.esprit.examen.entities.TypeCours;
 import com.esprit.examen.repositories.CoursRepository;
 
 @SpringBootTest
-public class CoursServiceTest {
+class CoursServiceTest {
 
 	@Autowired
 	CoursRepository coursRepository;
@@ -24,7 +24,7 @@ public class CoursServiceTest {
 	private static final Logger logger = LogManager.getLogger(CoursServiceTest.class);
 
 	@Test
-	public void testAddCours() {
+	void testAddCours() {
 		long start = System.currentTimeMillis();
 		logger.debug("start test");
 		Cours cours = new Cours();
@@ -43,7 +43,7 @@ public class CoursServiceTest {
 	}
 
 	@Test
-	public void ModifCourTest() {
+	void ModifCourTest() {
 		long start = System.currentTimeMillis();
 		logger.debug("start test");
 		Cours cours = new Cours();
@@ -60,7 +60,7 @@ public class CoursServiceTest {
 	}
 
 	@Test
-	public void DeletCourTest() {
+	void DeletCourTest() {
 		long start = System.currentTimeMillis();
 		logger.debug("start test");
 		Cours cours = new Cours();

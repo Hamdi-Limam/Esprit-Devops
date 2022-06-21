@@ -1,0 +1,33 @@
+version: '3.0'
+services:
+  database:
+    image: mysql:5.7
+    container_name: microservices-mysql
+    environment:
+      MYSQL_DATABASE: 'order-service'
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: ''
+    ports:
+      - '3306:3306'
+    volumes:
+      - './.mysql-data/db:/var/lib/mysql'
+    networks:
+      devops-network:
+
+  gestf:
+    build: .
+    container_name: "gestion-formation"
+    image: "hamdinaitlimam/gestformation:1.0"
+    ports:
+      - "8186:8186"
+    networks:
+      devops-network:
+    depends_on:
+      - database
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://127.0.0.1:3306/testf?useSSL=false&allowPublicKeyRetrieval=true&autoReconnect=true
+
+networks:
+  devops-network:
+    driver: bridge

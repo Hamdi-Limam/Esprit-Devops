@@ -33,8 +33,7 @@ public class SessionService implements ISessionService{
 
 	@Override
 	public void affecterFormateurASession(Long formateurId, Long sessionId) {
-			/*todo*/
-		
+		// Notaffected
 	}
 
 	@Override
