@@ -1,4 +1,4 @@
-FROM java:8
-EXPOSE 8088
-ADD target/GesF-1.0.jar GesF-1.0.jar.jar
-ENTRYPOINT ["java", "-jar", "GesF-1.0.jar.jar" ]
+FROM adoptopenjdk/openjdk11:latest
+ARG JAR_FILE=target/GesF-1.0.jar
+COPY ${JAR_FILE} GesF-1.0.jar
+ENTRYPOINT ["java","-jar","/GesF-1.0.jar"]
